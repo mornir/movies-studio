@@ -1,0 +1,30 @@
+{
+  "name": "movies-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Jérôme Pott <jeromepott@hotmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.145.1",
+    "@sanity/components": "^0.145.1",
+    "@sanity/core": "^0.145.0",
+    "@sanity/default-layout": "^0.145.1",
+    "@sanity/default-login": "^0.145.0",
+    "@sanity/desk-tool": "^0.145.1",
+    "@sanity/google-maps-input": "^0.145.1",
+    "prop-types": "^15.6",
+    "react": "^16.2",
+    "react-dom": "^16.2",
+    "react-icons": "^2.2.5"
+  },
+  "devDependencies": {}
+}
