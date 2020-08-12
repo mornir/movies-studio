@@ -9,11 +9,8 @@ const WebPreview = ({ document }) => {
   const { displayed } = document
 
   const targetURL =
-    url +
-    displayed.slug.current +
-    `/?preview&ts=${Date.now()}&pageId=${displayed._id}${
-      isDraft(displayed._id) ? "&isDraft=true" : ""
-    }`
+    url + displayed.slug.current + `/?previewId=${displayed._id}`
+
   console.count(targetURL)
   return (
     <iframe
