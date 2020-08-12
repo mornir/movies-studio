@@ -4,7 +4,7 @@ import S from "@sanity/desk-tool/structure-builder"
 const isDraft = (id) => id.includes("drafts")
 
 // Simple example of web preview
-const url = "http://localhost:3000/"
+const url = "https://nuxt-sanity-movies.netlify.app"
 const WebPreview = ({ document }) => {
   const { displayed } = document
 

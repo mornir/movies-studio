@@ -13,7 +13,7 @@ export default function resolveProductionUrl(document) {
     // And return a template string reflecting the URL structure we want. In this case, we're doing a
     // simple conditional to return '&isDraft=true' as a param for drafts as we'll query them
     // differently in the front-end
-    return `http://localhost:3000/${document.slug.current}/?previewId=${id}`
+    return `https://nuxt-sanity-movies.netlify.app/${document.slug.current}/?previewId=${id}`
   }
   return undefined
 }
