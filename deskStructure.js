@@ -8,8 +8,7 @@ const url = "https://nuxt-sanity-movies.netlify.app/"
 const WebPreview = ({ document }) => {
   const { displayed } = document
 
-  const targetURL =
-    url + displayed.slug.current + `/?previewId=${displayed._id}`
+  const targetURL = url + displayed.slug.current + `/?preview=true`
 
   console.count(targetURL)
   return (
