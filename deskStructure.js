@@ -17,7 +17,7 @@ const WebPreview = ({ document }) => {
 }
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
-  // Conditionally return a different configuration based on the schema type
+  // Only show the iframe for documents for which a preview makes sense.
   if (schemaType === 'movie') {
     return S.document().views([
       S.view.form().icon(MdEdit),
