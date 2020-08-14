@@ -1,23 +1,13 @@
 import React from "react"
 import S from "@sanity/desk-tool/structure-builder"
 
-// Simple example of web preview
 const url = "https://nuxt-sanity-movies.netlify.app/"
+
 const WebPreview = ({ document }) => {
   const { displayed } = document
-
   const targetURL = url + displayed.slug.current + `/?preview=true`
 
-  console.count(targetURL)
-  return (
-    <iframe
-      id="frame"
-      src={targetURL}
-      frameBorder={0}
-      width="100%"
-      height="100%"
-    />
-  )
+  return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />
 }
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
