@@ -9,57 +9,62 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
-        maxLength: 100
-      }
+        maxLength: 100,
+      },
     },
     {
       name: 'overview',
       title: 'Overview',
-      type: 'blockContent'
+      type: 'blockContent',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'releaseDate',
       title: 'Release date',
-      type: 'datetime'
+      type: 'datetime',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'externalId',
       title: 'External ID',
-      type: 'number'
+      type: 'number',
     },
     {
       name: 'popularity',
       title: 'Popularity',
-      type: 'number'
+      type: 'number',
     },
     {
       name: 'poster',
       title: 'Poster Image',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'castMembers',
       title: 'Cast Members',
       type: 'array',
-      of: [{type: 'castMember'}]
+      of: [{ type: 'castMember' }],
     },
     {
       name: 'crewMembers',
       title: 'Crew Members',
       type: 'array',
-      of: [{type: 'crewMember'}]
-    }
+      of: [{ type: 'crewMember' }],
+    },
   ],
   preview: {
     select: {
@@ -67,18 +72,20 @@ export default {
       date: 'releaseDate',
       media: 'poster',
       castName0: 'castMembers.0.person.name',
-      castName1: 'castMembers.1.person.name'
+      castName1: 'castMembers.1.person.name',
     },
     prepare(selection) {
       const year = selection.date && selection.date.split('-')[0]
-      const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+      const cast = [selection.castName0, selection.castName1]
+        .filter(Boolean)
+        .join(', ')
 
       return {
         title: `${selection.title} ${year ? `(${year})` : ''}`,
         date: selection.date,
         subtitle: cast,
-        media: selection.media
+        media: selection.media,
       }
-    }
-  }
+    },
+  },
 }
