@@ -1,4 +1,5 @@
 import React from "react"
+import { MdEdit, MdVisibility } from "react-icons/lib/md"
 import S from "@sanity/desk-tool/structure-builder"
 
 const url = "https://nuxt-sanity-movies.netlify.app/"
@@ -14,8 +15,8 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   // Conditionally return a different configuration based on the schema type
   if (schemaType === "movie") {
     return S.document().views([
-      S.view.form(),
-      S.view.component(WebPreview).title("Web Preview"),
+      S.view.form().icon(MdEdit),
+      S.view.component(WebPreview).title("Web Preview").icon(MdVisibility),
     ])
   }
 }
