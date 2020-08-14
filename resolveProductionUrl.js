@@ -1,5 +1,3 @@
-const isDraft = (id) => id.includes("drafts")
-
 export default function resolveProductionUrl(document) {
   // First, we select a specific type of document
   if (document._type === "movie") {

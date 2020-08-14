@@ -1,8 +1,6 @@
 import React from "react"
 import S from "@sanity/desk-tool/structure-builder"
 
-const isDraft = (id) => id.includes("drafts")
-
 // Simple example of web preview
 const url = "https://nuxt-sanity-movies.netlify.app/"
 const WebPreview = ({ document }) => {
