@@ -1,8 +1,10 @@
 import React from 'react'
-import { MdEdit, MdVisibility } from 'react-icons/md'
+import { MdMenu, MdEdit, MdVisibility } from 'react-icons/md'
 import S from '@sanity/desk-tool/structure-builder'
 
 const url = 'https://nuxt-sanity-movies.netlify.app/'
+
+const hiddenDocTypes = (listItem) => !['menu'].includes(listItem.getId())
 
 const WebPreview = ({ document }) => {
   const { displayed } = document
@@ -26,4 +28,20 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   }
 }
 
-export default S.defaults()
+export default () =>
+  S.list()
+    .title('Content')
+    .items([
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      S.divider(),
+      S.listItem()
+        .title('Menu')
+        .icon(MdMenu)
+        .child(
+          S.editor()
+            .id('menu')
+            .schemaType('menu')
+            .documentId('menu')
+            .title('Menu')
+        ),
+    ])

@@ -3,15 +3,21 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-// We import object and document schemas
-import blockContent from './blockContent'
-import crewMember from './crewMember'
-import castMember from './castMember'
-import movie from './movie'
-import person from './person'
-import screening from './screening'
-import plotSummary from './plotSummary'
-import plotSummaries from './plotSummaries'
+// We import objects
+import blockContent from './objects/blockContent'
+import crewMember from './objects/crewMember'
+import castMember from './objects/castMember'
+import plotSummary from './objects/plotSummary'
+import plotSummaries from './objects/plotSummaries'
+
+// We import documents
+import movie from './documents/movie'
+import person from './documents/person'
+import screening from './documents/screening'
+import route from './documents/route'
+
+// We import singletons
+import menu from './singletons/menu'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,12 +31,14 @@ export default createSchema({
     movie,
     person,
     screening,
+    route,
+    menu,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
     plotSummary,
     plotSummaries,
     castMember,
-    crewMember
-  ])
+    crewMember,
+  ]),
 })
