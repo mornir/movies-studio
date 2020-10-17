@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdEdit, MdVisibility } from 'react-icons/lib/md'
+import { MdEdit, MdVisibility } from 'react-icons/md'
 import S from '@sanity/desk-tool/structure-builder'
 
 const url = 'https://nuxt-sanity-movies.netlify.app/'

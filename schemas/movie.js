@@ -1,10 +1,10 @@
-import icon from 'react-icons/lib/md/local-movies'
+import { MdLocalMovies } from 'react-icons/md'
 
 export default {
   name: 'movie',
   title: 'Movie',
   type: 'document',
-  icon,
+  icon: MdLocalMovies,
   fields: [
     {
       name: 'title',
