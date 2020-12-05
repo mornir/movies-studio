@@ -1,17 +1,24 @@
 import React from 'react'
 import { MdMenu, MdEdit, MdVisibility } from 'react-icons/md'
 import S from '@sanity/desk-tool/structure-builder'
+import { useValidationStatus } from '@sanity/react-hooks'
 
 const url = 'https://nuxt-sanity-movies.netlify.app/'
 
 const hiddenDocTypes = (listItem) => !['menu'].includes(listItem.getId())
 
 const WebPreview = ({ document }) => {
-  const { displayed } = document
+  const { displayed, published } = document
   const slug = displayed.slug?.current
 
-  if (!slug) {
-    return <h1>Please set a slug to see a preview</h1>
+  const { markers } = useValidationStatus(published._id, published._type)
+
+  if (markers.length !== 0) {
+    return (
+      <h1>
+        Please fill out all required fields in order to the see the preview.
+      </h1>
+    )
   }
 
   const targetURL = url + slug + `/?preview=true`
