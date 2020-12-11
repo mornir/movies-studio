@@ -8,17 +8,11 @@ const url = 'https://nuxt-sanity-movies.netlify.app/'
 const hiddenDocTypes = (listItem) => !['menu'].includes(listItem.getId())
 
 const WebPreview = ({ document }) => {
-  const { displayed, published } = document
+  const { displayed } = document
   const slug = displayed.slug?.current
 
-  const { markers } = useValidationStatus(published._id, published._type)
-
-  if (markers.length !== 0) {
-    return (
-      <h1>
-        Please fill out all required fields in order to the see the preview.
-      </h1>
-    )
+  if (!slug) {
+    return <h1>Please set a slug to see a preview</h1>
   }
 
   const targetURL = url + slug + `/?preview=true`
