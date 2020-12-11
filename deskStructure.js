@@ -1,7 +1,8 @@
 import React from 'react'
-import { MdMenu, MdEdit, MdVisibility } from 'react-icons/md'
+import { MdMenu, MdEdit, MdVisibility, MdThumbUp } from 'react-icons/md'
 import S from '@sanity/desk-tool/structure-builder'
-import { useValidationStatus } from '@sanity/react-hooks'
+import SocialPreview from 'part:social-preview/component'
+import { toPlainText } from 'part:social-preview/utils'
 
 const url = 'https://nuxt-sanity-movies.netlify.app/'
 
@@ -25,6 +26,26 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
     return S.document().views([
       S.view.form().icon(MdEdit),
       S.view.component(WebPreview).title('Web Preview').icon(MdVisibility),
+      S.view
+        .component(
+          SocialPreview({
+            // Overwrite prepareFunction to pick the right fields
+            prepareFunction: (
+              {
+                title,
+                overview,
+                poster,
+              } /* this object is the currently active document */
+            ) => ({
+              title,
+              description: toPlainText(overview || []),
+              siteUrl: 'https://movies.dev',
+              ogImage: poster,
+            }),
+          })
+        )
+        .title('Social & SEO')
+        .icon(MdThumbUp),
     ])
   }
 }
