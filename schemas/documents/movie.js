@@ -58,6 +58,7 @@ export default {
       title: 'Cast Members',
       type: 'array',
       of: [{ type: 'castMember' }],
+      validation: (Rule) => Rule.min(1).warning('No cast members'),
     },
     {
       name: 'crewMembers',
