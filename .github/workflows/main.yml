@@ -16,3 +16,4 @@ jobs:
         with:
           name: backup-tarball
           path: backups/backup.tar.gz
+          if-no-files-found: error
