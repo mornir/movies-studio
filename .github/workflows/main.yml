@@ -10,7 +10,7 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         with:
-          args: sanity dataset export production backups/backup.tar.gz --no-assets
+          args: dataset export production backups/backup.tar.gz --no-assets
       - name: Archive backup
         uses: actions/upload-artifact@v2
         with:
