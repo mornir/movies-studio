@@ -15,4 +15,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: backup-tarball
-          path: /github/workspace/backup.tar.gz
+          path: github/workspace/backup.tar.gz
