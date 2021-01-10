@@ -10,4 +10,4 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         with:
-          args: export production backup.tar.gz --no-assets
+          args: dataset export production backup.tar.gz --no-assets
