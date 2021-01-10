@@ -3,7 +3,7 @@ on: [push]
 jobs:
   sanity-deploy:
     runs-on: ubuntu-latest
-    name: Deploy Sanity
+    name: Export data
     steps:
       - uses: actions/checkout@v2
       - uses: sanity-io/github-action-sanity@v0.1-alpha
@@ -11,3 +11,8 @@ jobs:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         with:
           args: dataset export production backup.tar.gz --no-assets
+      - name: Archive backup
+        uses: actions/upload-artifact@v2
+        with:
+          name: backup-tarball
+          path: /github/workspace/backup.tar.gz
