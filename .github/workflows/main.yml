@@ -10,9 +10,9 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         with:
-          args: dataset export production backup.tar.gz --no-assets
+          args: sanity dataset export production backups/backup.tar.gz --no-assets
       - name: Archive backup
         uses: actions/upload-artifact@v2
         with:
           name: backup-tarball
-          path: github/workspace/backup.tar.gz
+          path: backups/backup.tar.gz
