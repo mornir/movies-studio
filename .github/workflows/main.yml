@@ -6,7 +6,7 @@ on:
 jobs:
   backup-dataset:
     runs-on: ubuntu-18.04
-    name: Export data
+    name: Backup dataset
     steps:
       - uses: actions/checkout@v2
       - name: Export dataset
