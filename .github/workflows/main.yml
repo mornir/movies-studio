@@ -1,5 +1,8 @@
 name: Backup Routine
-on: [push]
+on:
+  schedule:
+    # Runs at 04:00 UTC on the 1st and 17th of every month
+    - cron: '0 4 */16 * *'
 jobs:
   backup-dataset:
     runs-on: ubuntu-18.04
