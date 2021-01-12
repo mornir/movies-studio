@@ -2,7 +2,7 @@ name: Backup Routine
 on: [push]
 jobs:
   backup-dataset:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     name: Export data
     steps:
       - uses: actions/checkout@v2
