@@ -6,7 +6,8 @@ import { toPlainText } from 'part:social-preview/utils'
 
 const url = 'https://nuxt-sanity-movies.netlify.app/'
 
-const hiddenDocTypes = (listItem) => !['menu'].includes(listItem.getId())
+const hiddenDocTypes = (listItem) =>
+  !['menu', 'home'].includes(listItem.getId())
 
 const WebPreview = ({ document }) => {
   const { displayed } = document
@@ -54,6 +55,16 @@ export default () =>
   S.list()
     .title('Content')
     .items([
+      S.listItem()
+        .title('Home')
+        .icon(MdMenu)
+        .child(
+          S.editor()
+            .id('home')
+            .schemaType('home')
+            .documentId('home')
+            .title('Home')
+        ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
       S.divider(),
       S.listItem()

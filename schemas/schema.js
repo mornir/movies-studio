@@ -18,6 +18,7 @@ import route from './documents/route'
 
 // We import singletons
 import menu from './singletons/menu'
+import home from './singletons/home'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,8 +34,7 @@ export default createSchema({
     screening,
     route,
     menu,
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
+    home,
     blockContent,
     plotSummary,
     plotSummaries,
