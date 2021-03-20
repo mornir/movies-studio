@@ -64,6 +64,13 @@ export default () =>
             .schemaType('home')
             .documentId('home')
             .title('Home')
+            .views([
+              S.view.form().icon(MdEdit),
+              S.view
+                .component(WebPreview)
+                .title('Web Preview')
+                .icon(MdVisibility),
+            ])
         ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
       S.divider(),
