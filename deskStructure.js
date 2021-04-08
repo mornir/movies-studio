@@ -64,6 +64,7 @@ export default () =>
             .schemaType('home')
             .documentId('home')
             .title('Home')
+            // Custom view
             .views([
               S.view.form().icon(MdEdit),
               S.view
