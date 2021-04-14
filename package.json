@@ -7,8 +7,7 @@
   "author": "Jérôme Pott <jeromepott@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "sanity start",
-    "test": "sanity check"
+    "dev": "sanity start"
   },
   "keywords": [
     "sanity"
