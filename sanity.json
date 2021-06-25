@@ -16,7 +16,8 @@
     "@sanity/google-maps-input",
     "@sanity/vision",
     "@sanity/production-preview",
-    "social-preview"
+    "social-preview",
+    "netlify-deploy-status-badge"
   ],
   "parts": [
     {
