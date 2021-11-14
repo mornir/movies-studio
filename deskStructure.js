@@ -13,11 +13,18 @@ const WebPreview = ({ document }) => {
   const { displayed } = document
   const slug = displayed.slug?.current
 
+  console.log(document);
+
   if (!slug) {
     return <h1>Please set a slug to see a preview</h1>
   }
 
-  const targetURL = url + slug + `/?preview=true`
+  let targetURL = url + slug + `/?preview=true`
+
+  if (displayed._type === 'movie') {
+    targetURL = url + 'movies/' + slug + `/?preview=true`
+  }
+
   return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />
 }
 
