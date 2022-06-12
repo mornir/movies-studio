@@ -6,5 +6,6 @@
   "@sanity/google-maps-input": "57ae3a403ce6a070b31ec6fa1f3c8339cafa66661eaddba1d4d5ee3cc2197ec2",
   "@sanity/form-builder": "b38478227ba5e22c91981da4b53436df22e48ff25238a55a973ed620be5068aa",
   "sanity-plugin-netlify-deploy-status-badge": "f4302d53933615325853c58a226af2f9206d055688e932cb636a4ace2e8b85c4",
-  "netlify-deploy-status-badge": "f4302d53933615325853c58a226af2f9206d055688e932cb636a4ace2e8b85c4"
+  "netlify-deploy-status-badge": "f4302d53933615325853c58a226af2f9206d055688e932cb636a4ace2e8b85c4",
+  "@sanity/vision": "da5b6ed712703ecd04bf4df560570c668aa95252c6bc1c41d6df1bda9b8b8f60"
 }
